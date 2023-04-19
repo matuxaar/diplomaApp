@@ -16,7 +16,7 @@ class NetworkModule {
     @Singleton
     fun getRetrofit(moshi: Moshi): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("ДОБАВЬ ЮРЛ")
+            .baseUrl("http://10.0.2.2:7039/")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()

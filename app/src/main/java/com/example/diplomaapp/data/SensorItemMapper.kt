@@ -5,7 +5,13 @@ import com.example.diplomaapp.domain.models.SensorItem
 class SensorItemMapper {
     operator fun invoke(response: SensorResponse): SensorItem {
         return SensorItem(
-            nameSensor = response.nameSensor
+            lastTriggered = response.lastTriggered.orEmpty(),
+            status = response.status ?: false,
+            myProperty = response.myProperty.orEmpty(),
+            triggerCount = response.triggerCount ?: 0,
+            violationType = response.violationType.orEmpty(),
+            location = response.location.orEmpty(),
+            statusInfo = response.location.orEmpty()
         )
     }
 }
