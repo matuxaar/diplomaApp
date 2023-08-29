@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">diplomaApp</string>
+    <string name="sensors">Sensors</string>
+    <string name="add_sensor">Add Sensor</string>
 </resources>

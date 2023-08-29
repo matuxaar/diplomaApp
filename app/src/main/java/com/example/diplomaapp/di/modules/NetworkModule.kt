@@ -1,6 +1,5 @@
 package com.example.diplomaapp.di.modules
 
-import com.example.diplomaapp.data.service.PokeService
 import com.example.diplomaapp.data.service.SensorService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
@@ -18,7 +17,7 @@ import javax.inject.Singleton
 class NetworkModule {
     @Provides
     @Singleton
-    fun getRetrofit(moshi: Moshi): Retrofit {
+    fun getMessage(moshi: Moshi): Retrofit {
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
@@ -44,18 +43,4 @@ class NetworkModule {
         return retrofit.create(SensorService::class.java)
     }
 
-    @Provides
-    @Singleton
-    fun getPokeService(moshi: Moshi): PokeService {
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-        val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
-        return Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/api/v2/")
-            .client(client)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            .build()
-            .create(PokeService::class.java)
-    }
 }

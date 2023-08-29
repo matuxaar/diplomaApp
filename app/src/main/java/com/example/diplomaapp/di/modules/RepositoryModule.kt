@@ -1,4 +1,4 @@
-package com.example.diplomaapp.di
+package com.example.diplomaapp.di.modules
 
 import com.example.diplomaapp.data.RepositoryImpl
 import com.example.diplomaapp.domain.Repository

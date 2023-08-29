@@ -4,10 +4,11 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.diplomaapp.DaggerApp
+import com.example.diplomaapp.R
 import com.example.diplomaapp.di.viewModel.ViewModelFactory
 import javax.inject.Inject
 
-class SensorFragment : Fragment() {
+class SensorListFragment : Fragment(R.layout.fragment_sensor_list) {
 
     @Inject
     lateinit var factory: ViewModelFactory

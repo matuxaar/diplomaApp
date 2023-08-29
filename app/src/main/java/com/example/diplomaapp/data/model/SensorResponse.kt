@@ -2,8 +2,6 @@ package com.example.diplomaapp.data.model
 
 import com.squareup.moshi.Json
 
-//import com.squareup.moshi.Json
-
 data class SensorResponse(
     @Json(name = "lastTiggered") val lastTriggered: String? = null,
     @Json(name = "status") val status: Boolean? = null,
