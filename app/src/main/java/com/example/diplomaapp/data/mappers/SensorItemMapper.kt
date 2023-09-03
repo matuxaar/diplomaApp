@@ -1,4 +1,4 @@
-package com.example.diplomaapp.data
+package com.example.diplomaapp.data.mappers
 
 import com.example.diplomaapp.data.model.SensorResponse
 import com.example.diplomaapp.domain.models.SensorItem
