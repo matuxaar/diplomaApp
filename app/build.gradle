@@ -60,6 +60,10 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.44'
     kapt "com.google.dagger:dagger-compiler:2.44"
 
+    //Room
+    implementation 'androidx.room:room-ktx:2.5.1'
+    kapt "androidx.room:room-compiler:2.5.1"
+
     //Moshi
     implementation 'com.squareup.moshi:moshi:1.12.0'
     implementation 'com.squareup.moshi:moshi-kotlin:1.12.0'

@@ -1,12 +1,10 @@
-package com.example.diplomaapp.data
+package com.example.diplomaapp.data.service
 
 import android.util.Log
 import com.example.diplomaapp.data.database.DataBaseSource
 import com.example.diplomaapp.data.mappers.SensorEntityMapper
 import com.example.diplomaapp.data.mappers.SensorItemMapper
 import com.example.diplomaapp.data.model.PoleResponse
-import com.example.diplomaapp.data.service.PokeService
-import com.example.diplomaapp.data.service.SensorService
 import com.example.diplomaapp.domain.Repository
 import com.example.diplomaapp.domain.models.SensorItem
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +20,7 @@ class RepositoryImpl @Inject constructor(
     private val pokeService: PokeService,
     private val sensorDataBase: DataBaseSource,
     private val sensorEntityMapper: SensorEntityMapper
-    ) : Repository {
+) : Repository {
     override fun getRequest(): Flow<SensorItem> = flow {
         val data = sensorItemMapper(sensorService.getData())
         sensorDataBase.insert(sensorEntityMapper.invoke(data))
